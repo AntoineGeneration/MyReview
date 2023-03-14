@@ -1,5 +1,5 @@
 
-<div class="container mt-2">
+<!--<div class="container mt-2">
   <ng-container *ngIf="ListProduits | async as data; else failureOrLoading">
 
     <div class="card">
@@ -17,7 +17,7 @@
                <td>{{p.title}}</td>
                <td>{{p.price}}</td>
                <td>{{p.reviews}}</td>
-               <!--<td>{{p.image}}</td>-->
+
                <td>
                  <button (click)="Supprimer(p)" class="btn btn-danger" >
                    <i class="bi bi-trash"></i>
@@ -46,6 +46,9 @@
   </ng-container>
 
 </div>
+-->
+
+
 <div class="container mt-2">
   <div class="d-flex flex-row flex-wrap justify-content-center">
     <div class="card mr-2 w-25 h-100  mx-3 my-3" *ngFor="let p of this.ListProduits| async">
@@ -96,13 +99,9 @@
                 </div>
               </div>
             </div>
-
-
-
-          <!--</div>-->
         </div>
       </div>
-     <!-- <button (click)="tester()">Enregistrer commentaire</button>-->
+
     </div>
   </div>
 </div>

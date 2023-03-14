@@ -117,14 +117,6 @@ TextAreaContents!:string;
 
   async envoyerCommentaire( id_prod : string) {
 
-    // Récupérez le contenu du commentaire à partir de la zone de texte
-    /*const commentaire ={
-      id_publication :id_prod,
-      date_comment : new Date(),
-      contents:this.TextAreacommentaire,
-      images : ""
-    };*/
-
      this.comment.id_publication=id_prod;
      this.comment.contents=this.TextAreacommentaire;
      this.comment.date_comment=new Date();
@@ -143,15 +135,11 @@ TextAreaContents!:string;
         console.log(err);
       }
     });
- // alert(commentaire.contents);
-
-
-    /*
     // Réinitialisez la zone de texte
-    this.commentTextarea.nativeElement.value = '';
+    this.TextAreacommentaire= '';
 
     // Chargez tous les commentaires pour ce produit
-    this.ListCommentaires = await this.produitService.getAllCommentsForP(id_prod);
+    this.ListCommentaires = await this.produitService.getAllcomments();
 
     // Affichez tous les commentaires dans la zone de commentaires
     this.showComments = true;
@@ -164,7 +152,7 @@ TextAreaContents!:string;
 
     this.closeCommentBox();
 
-    */
+
   }
 
   ChargerComments(id_product : string) {
