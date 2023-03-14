@@ -1,3 +1,4 @@
+const produit = require("../models/produits").Produit;
 
 const commentaire = require('../models/Comments').Commentaire;
 
@@ -6,8 +7,10 @@ const commentaire = require('../models/Comments').Commentaire;
 
 const AddComment = async (comment) => {
     try {
-        await comment.save();
-        console.log("Product saved successfully!");
+        const newComment = new commentaire(comment);
+        await newComment.save();
+        console.log("commentaire suvegardé avec succès");
+        return newComment;
     } catch (error) {
         console.error(error);
     }
@@ -36,6 +39,18 @@ const getAllComments = async () => {
     }
 };
 
+
+async function findAllCommentByIdProduct(id_publication) {
+    try { const comments = await commentaire.find({ id_publication: id_publication });
+    return comments;
+    } catch (error) {
+        throw new Error(`Error deleting comment with id ${id}: ${error}`);
+    }
+}
+
+
+
+
 const deleteComment = async (id) => {
     try {
         const comment = await commentaire.findByIdAndRemove(id);
@@ -48,6 +63,7 @@ const deleteComment = async (id) => {
 const updateComment = async (id, update) => {
     try {
         const comment = await commentaire.findByIdAndUpdate(id, update, { new: true });
+        console.log(comment);
         return comment;
     } catch (error) {
         throw new Error(`Error updating comment with id ${id}: ${error}`);
@@ -61,5 +77,6 @@ module.exports = {
     getComment,
     getAllComments,
     deleteComment,
-    updateComment
+    updateComment,
+    findAllCommentByIdProduct
 };

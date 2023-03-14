@@ -5,7 +5,7 @@ const commentaire = require('../models/Comments').Commentaire;
 
 const comment1 = new commentaire({
 
-    id_publication : 'publ 1',
+    id_publication : '6404b10c26f86a15809c85c8',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -13,14 +13,14 @@ const comment1 = new commentaire({
 
 const comment2 = new commentaire({
 
-    id_publication : 'publ 1',
+    id_publication : '6404b10c26f86a15809c85c8',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
 });
 const comment3= new commentaire({
 
-    id_publication : 'publ 2',
+    id_publication : '6404b10c26f86a15809c85c8',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -28,7 +28,7 @@ const comment3= new commentaire({
 
 const comment4 = new commentaire({
 
-    id_publication : 'publ1',
+    id_publication : '6404b10c26f86a15809c85c8',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -36,7 +36,7 @@ const comment4 = new commentaire({
 
 const comment5 = new commentaire({
 
-    id_publication : 'publ2',
+    id_publication : '6405f74e27bbbd365035f3db',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -44,7 +44,7 @@ const comment5 = new commentaire({
 
 const comment6 = new commentaire({
 
-    id_publication : 'publ4',
+    id_publication : '6405f74e27bbbd365035f3db',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -52,7 +52,7 @@ const comment6 = new commentaire({
 
 const comment7 = new commentaire({
 
-    id_publication : 'publ5',
+    id_publication : '6405f74e27bbbd365035f3db',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -60,7 +60,7 @@ const comment7 = new commentaire({
 
 const comment8 = new commentaire({
 
-    id_publication : 'publ4',
+    id_publication : '6405f74e27bbbd365035f3da',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -68,7 +68,7 @@ const comment8 = new commentaire({
 
 const comment9 = new commentaire({
 
-    id_publication : 'publ5',
+    id_publication : '6405f74e27bbbd365035f3da',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -76,7 +76,7 @@ const comment9 = new commentaire({
 
 const comment10 = new commentaire({
 
-    id_publication : 'publ6',
+    id_publication : '6405f74e27bbbd365035f3da',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""
@@ -85,7 +85,7 @@ const comment10 = new commentaire({
 
 const comment11 = new commentaire({
 
-    id_publication : 'publ7',
+    id_publication : '6405f74e27bbbd365035f3da',
     date_comment : new Date(),
     contents: Math.floor(0+Math.random()*1000000)+"",
     images : ""

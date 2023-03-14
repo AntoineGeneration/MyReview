@@ -2,11 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 
-//const  saveProduct = require('../services/ProductService').saveProduct;
-const  saveComment = require('../services/CommentService').AddComment;
-//const staticProducts = require('../public/ProduitsStatic');
-const staticComments = require('../public/CommentairesStatic');
-//const Product = require('../models/produits').Produit;
+const  saveProduct = require('../services/ProductService').saveProduct;
+//const  saveComment = require('../services/CommentService').AddComment;
+const staticProducts = require('../public/ProduitsStatic');
+//const staticComments = require('../public/CommentairesStatic');
+const Product = require('../models/produits').Produit;
+
+
+
+
 
 const cors = require('cors');
 
@@ -24,6 +28,9 @@ const corsOptions = {
 
 app.use(cors());
 
+const bodyParser = require("body-parser")
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/produits',productRouter.router);
 app.use('/commentaires',commentRouter);
@@ -37,10 +44,10 @@ connexion.once('open', async () => {
     //await connexion.dropDatabase();
 
     // Enregistrer les produits statiques
-    staticComments.forEach(async (Data) => {
-        const comment = new Commentaire(Data);
-        await saveComment(comment);
-    });
+   /* staticProducts.forEach(async (Data) => {
+        const product = new Product(Data);
+        await saveProduct(product);
+    });*/
 
 });
 

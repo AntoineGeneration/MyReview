@@ -5,10 +5,12 @@ const produit = require('../models/produits').Produit;
 
 
 
-const saveProduct = async (produit) => {
+const saveProduct = async (product) => {
     try {
-        await produit.save();
+        const newProduct = new produit(product);
+        await newProduct.save();
         console.log("Product saved successfully!");
+        return newProduct;
     } catch (error) {
         console.error(error);
     }
@@ -25,42 +27,6 @@ const getProduct = async (id) => {
         throw new Error(`Error retrieving product with id ${id}: ${error}`);
     }
 };
-
-/*
-const getProduct = async (id) => {
-    try {
-        const objectId = mongoose.Types.ObjectId(id);
-        const product = await produit.findById(objectId);
-        return product;
-    } catch (error) {
-        throw new Error(`Error retrieving product with id ${id}: ${error}`);
-    }
-};
-
-   getProduct = (req, res, next) => {
-       produit.findById(req.param().id)
-        .then(product => res.json(product))
-        .catch(err => res.status(400).json('Error: ' + err));
-};
-
-    getProduct = (req, res, next) => {
-    const id = req.params.id;
-    if (!id) {
-        return res.status(400).json({ error: 'Missing product ID' });
-    }
-
-        produit.findById(id)
-        .then(product => {
-            if (!product) {
-                return res.status(404).json({ error: `Product with ID ${id} not found` });
-            }
-
-            res.json(product);
-        })
-        .catch(err => res.status(400).json({ error: `Error retrieving product with ID ${id}: ${err}` }));
-};
-*/
-
 
 
 

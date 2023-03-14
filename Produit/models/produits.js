@@ -2,11 +2,18 @@ const mongoose = require('mongoose');
 
 
 const productSchema = new mongoose.Schema({
-   // id: { type: String, required: true, unique: true },
-    nom: { type: String, required: true },
-    prix: { type: Number, required: true },
-    id_user: { type: String, required: true },
-    image: {type : String, required :  false}
+    //category: { type: Schema.Types.ObjectId, ref: "Category" },
+    category : String,
+    //owner: { type: Schema.Types.ObjectId, ref: "Owner" },
+    owner : String,// l'id_user
+    title: String,
+    description: String,
+    photo: String,
+    price: Number,
+    stockQuantity: Number,
+    //reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }]
+    reviews : String ,
+    raiting : Number//id_publication
 });
 
 const Produit = mongoose.model('Produit', productSchema);
